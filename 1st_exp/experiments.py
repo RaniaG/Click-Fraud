@@ -22,11 +22,12 @@ def train(filename,modelname,t):
     print(df.columns)
     print(df.dtypes)
     print(df.first)
+
     if(t):
         df=df.drop(['ip','click_time','attributed_time'],axis=1)
     #corr(df)
     
-    
+    print(df.columns)
     val,train=sample_split(df)
     df= None 
     gc.collect()
@@ -77,9 +78,10 @@ def train(filename,modelname,t):
     plt.legend(loc="lower right")
     plt.show()
     
+    
 #train("train-000.csv","originalFeatures_18mil",False)
-#train("./mergedfeatures/train0_count.csv","countFeatures_18mil",False)
+train("./mergedfeatures/train0_count.csv","countFeatures_18mil",False)
 #train("./mergedfeatures/train0_time5.csv","timeFeatures5_18mil",True)
 #train("./mergedfeatures/train0_count_r.csv",True)
 
-train("./mergedfeatures/train_ip_feat0.csv","ip_Features_18mil",False)
+#train("./mergedfeatures/train_ip_feat0.csv","ip_Features_18mil",False)

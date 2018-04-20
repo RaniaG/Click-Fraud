@@ -7,7 +7,7 @@ import pandas as pd
 
 import numpy as np
 
-df=pd.read_csv("../chunks/train-008.csv")#9
+df=pd.read_csv("../test.csv")#8
 print("file loaded")
 
 print(df.columns)
@@ -72,18 +72,6 @@ print(dfnew.first)
 
 
 
-"""
-for i in range(0,len(uniqueips)):
-    temp=df.loc[df['ip'] == uniqueips[i]]
-    dfnew.iloc[i, dfnew.columns.get_loc('click_count')] = len(temp.index)
-    dfnew.iloc[i, dfnew.columns.get_loc('os_count')] =len(temp['os'].unique())
-    dfnew.iloc[i, dfnew.columns.get_loc('device_count')]=len(temp['device'].unique())
-    dfnew.iloc[i, dfnew.columns.get_loc('n_channels')] = len(temp['channel'].unique())
-    dfnew.iloc[i, dfnew.columns.get_loc('')] =np.bincount(temp['channel']).argmax()
-    dfnew.iloc[i, dfnew.columns.get_loc('is_att')] =np.bincount(temp['is_attributed']).argmax()
-    dfnew.iloc[i, dfnew.columns.get_loc('max_app')] =npmax_channel.bincount(temp['app']).argmax()
-    dfnew.iloc[i, dfnew.columns.get_loc('n_apps')]=len(temp['app'].unique())
- """
 print("saving to file")
-dfnew.to_csv('./newfeatures/train_count8.csv')
+dfnew.to_csv('test_count.csv',index=False)
 
