@@ -7,6 +7,10 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 import gc
 
 def sample_split(df):
